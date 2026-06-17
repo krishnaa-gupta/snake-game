@@ -17,7 +17,7 @@ stages {
             sh 'ls -la'
             sh 'docker --version'
             sh 'helm version'
-            sh 'kubectl get nodes'
+            sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config get nodes'
         }
     }
 }
