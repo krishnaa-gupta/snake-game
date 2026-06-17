@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: snake-game
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: snake-game
+
+  template:
+    metadata:
+      labels:
+        app: snake-game
+
+    spec:
+      containers:
+      - name: snake-game
+        image: snake-game:latest
+        imagePullPolicy: Never
+
+        ports:
+        - containerPort: 80
